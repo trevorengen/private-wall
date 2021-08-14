@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <title>Login/Register</title>
+</head>
+<body>
+    <nav>
+        <h2 id="nav-header">CodingDojo Wall</h2>
+        <form method="POST" action="/login">
+            <input type="text" name="email" class="nav-input" placeholder="Email" id="nav-email">
+            <input type="password" name="password" class="nav-input" placeholder="Password">
+            <input type="submit" value="Login" class="nav-button">
+        </form>
+    </nav>
+
+    <main>
+        <form method="POST" action="/register" class="form-reg">
+            <h2>Register</h2>
+            {% with name = get_flashed_messages(category_filter=["name"]) %}
+                {% for n in name %}
+                    <p>{{n}}</p>
+                {% endfor %}
+            {% endwith %}
+            <div class="row">
+                <input type="text" name="first_name" class="register-input" placeholder="First Name">
+                <input type="text" name="last_name" class="register-input" placeholder="Last Name">
+            </div>
+            {% with email = get_flashed_messages(category_filter=["email"]) %}
+                {% for n in email %}
+                    <p>{{n}}</p>
+                {% endfor %}
+            {% endwith %}
+            <input type="text" name="email" class="register-input" placeholder="Email">
+            {% with password = get_flashed_messages(category_filter=["password"]) %}
+                {% for n in password %}
+                    <p>{{n}}</p>
+                {% endfor %}
+            {% endwith %}
+            <input type="password" name="password" class="register-input" placeholder="Password">
+            <input type="password" name="confirm_password" class="register-input" placeholder="Confirm Password">
+            <div class="row">
+                <input type="checkbox" name="privacy" class="register-check">
+                <label for="privacy">I agree to this sites <a href="#">privacy policy.</a></label>
+                {% with privacy = get_flashed_messages(category_filter=["privacy"]) %}
+                    {% for n in privacy %}
+                        <p>{{n}}</p>
+                    {% endfor %}
+                {% endwith %}
+            </div>
+            <input type="submit" value="Register" class="register-button">
+        </form>
+    </main>
+</body>
+</html>

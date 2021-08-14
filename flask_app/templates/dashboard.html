@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <title>Dashboard</title>
+</head>
+<body>
+    <nav>
+        <h2 id="nav-header">CodingDojo Wall</h2>
+        <p id="greeting">Hello {{user.first_name}}!</p>
+        <form method="POST" action="/logout">
+            <input type="submit" value="Logout" class="nav-button">
+        </form>
+    </nav>
+
+    <main>
+        <div id="messages">
+            <h3><span id="new-messages">{{num_recieved}}</span> Message(s) for You</h3>
+            {% for message in messages %}
+                <div class="message-container">
+                    <div class="message-sep">
+                        <h6>{{message.first_name}} said: <span class="time">({{message.time_since}})</span></h6>
+                        <p class="message-content">{{message.content}}</p>
+                    </div>
+                    <i class="fa fa-trash" style="font-size:36px"></i>
+                </div>
+            {% endfor %}
+        </div>
+        <div id="line"></div>
+        <div id="send">
+            <h3>Send Messages</h3>
+            <p id="sent-amount">You have sent {{num_sent}} messages so far.</p>
+            <div id="targets">
+                {% for target in targets %}
+                    {% if target.id != user.id %}
+                        <form class="send-row" method="POST" action="/send_message">
+                            <label for="message" class="message-label">{{target.first_name}}</label>
+                            <input type="hidden" name="target" value="{{target.id}}">
+                            <input type="text" name="message" class="message-input">
+                            <input type="submit" value="Send" class="message-send">
+                        </form>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+</body>
+</html>

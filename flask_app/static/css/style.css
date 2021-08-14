@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
+
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    font-family: 'Heebo', sans-serif;
+}
+
+nav {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    height: 70px;
+    align-items: center;
+    color: white;
+    justify-content: flex-end;
+    border-bottom: 2px solid black;
+    background-color: dodgerblue;
+}
+
+#nav-header {
+    margin-left: 15px;
+    margin-right: auto;
+}
+
+.nav-input {
+    height: 30px;
+    width: 150px;
+    background-color: white;
+    border: 4px solid dodgerblue;
+    border-radius: 10px;
+    padding: 3px;
+}
+
+.nav-input:focus {
+    outline: 0;
+    border: 4px ridge dodgerblue;
+    border-radius: 5px;
+}
+
+.nav-button {
+    margin-right: 30px;
+    border-radius: 7px;
+    padding: 9px 20px;
+    box-shadow: 2px 2px 5px 1px black;
+    background-color: #4DA7FF;
+    font-weight: 700;
+    color: white;
+}
+
+.nav-button:hover {
+    background-color: #4491df;
+}
+
+.form-reg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: #80C0FF;
+    padding: 50px 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px 1px black;
+}
+
+.register-input {
+    margin: 7px;
+    height: 30px;
+    width: auto;
+    background-color: white;
+    border: 4px solid #80C0FF;
+    border-radius: 10px;
+    padding: 3px;
+}
+
+.register-input:focus {
+    outline: 0;
+    border: 4px ridge #80C0FF;
+    border-radius: 5px;
+}
+
+main form h2 {
+    color: white;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+.register-button {
+    width: 300px;
+    height: 35px;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 15px;
+    background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+    font-weight: 600;
+    font-size: 18px;
+    color: white;
+    box-shadow: 2px 2px 3px 1px black;
+}
+
+.register-button:hover {
+    background: linear-gradient(90deg, #b62b59 0%, #b49043 100%);
+}
+
+.register-check {
+    margin: 10px 0 10px 15px;
+}
+
+div label {
+    font-size: 12px;
+    margin: auto 10px;
+}
+
+.row {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+p {
+    font-size: 10px;
+    color: red;
+    margin-left : 12px;
+}
+
+#greeting {
+    font-weight: 600;
+    font-size: 18px;
+    color: white;
+    margin-right: 30px;
+}
+
+main {
+    margin: 50px auto;
+    width: 75%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+#messages {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-right: 30px;
+    width: 100%;
+}
+
+#send {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-left: 30px;
+    width: 100%;
+}
+
+#line {
+    border-right: 3px solid black;
+    height: 700px;
+    margin-left: -3px;
+}
+
+#sent-amount {
+    color: black;
+    font-size: 13px;
+    margin: 10px 0;
+    margin-right: auto;
+    text-align: center;
+}
+
+h3 {
+    margin-right: auto;
+    text-decoration: underline;
+}
+
+#messages h3 {
+    margin-right: auto;
+}
+
+.send-row {
+    display: flex; 
+    flex-flow: row nowrap;
+    margin: 10px;
+}
+
+.message-label {
+    font-size: 16px;
+}
+
+.message-input {
+    width: 100%;
+    height: 30px;
+    padding: 7px;
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+.message-input:focus {
+    outline: 0;
+}
+
+.message-send {
+    border: 3px solid black;
+    border-radius: 5px;
+    margin-left: 10px;
+    width: 100px;
+    font-weight: 700;
+    font-size: 18px;
+    background-color: dodgerblue;
+    color: white;
+    box-shadow: 2px 2px 6px 1px grey;
+}
+
+.message-send:hover {
+    background-color: rgb(27, 128, 228);
+}
+
+.message-container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    border: 4px outset #14b8a5;
+    border-radius: 8px;
+    background-color: #1cf1d9;
+    padding: 7px;
+    margin: 10px 0;
+    box-shadow: 2px 3px 7px 2px grey;
+}
+
+.message-sep {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-right: auto;
+}
+
+h6 {
+    margin: 10px;
+    font-size: 15px;
+    width: 100%;
+    padding: 0 100px 7px 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+}
+
+i {
+    margin-left: 30px;
+    border: 2px solid red;
+    padding: 7px;
+    border-radius: 5px;
+    background-color: #d53369;
+    color: lawngreen;
+    box-shadow: 2px 2px 8px 1px #d53369;
+    margin-right: 5px;
+}
+
+.time {
+    margin-left: auto;
+}
+
+#new-messages {
+    color: dodgerblue;
+}
+
+.message-content {
+    color: black;
+    font-size: 18px;
+    border-top: 2px solid black;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    border-radius: 1px;
+}
